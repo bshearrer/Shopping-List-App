@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-md-5">
+<!--    Recieve the list item that was clicked from an <a> in recipe-item.component.html -->
     <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail
-      *ngIf="selectedRecipe; else infoText"
-      [recipe]="selectedRecipe"
-    ></app-recipe-detail>
+<!--    If a recipe is selected, send the recipe details to the recipe variable in recipe-detail.component.ts -->
+<!--    then, in recipe-detail.component.html the recipe is set up -->
+    <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
+<!--    If a recipe is not selected, display the <p> info in ng-template -->
       <ng-template #infoText>
         <p>Please select a recipe!</p>
       </ng-template>
-
   </div>
 </div>
