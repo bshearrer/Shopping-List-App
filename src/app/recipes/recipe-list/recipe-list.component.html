@@ -10,7 +10,10 @@
 <!--    recipeSelected is an output variable from recipe-item.component sending which recipe was clicked-->
 <!--    [recipe] is an input variable for recipe-list that receives all the recipes from recipe-list.component -->
 <!--    onRecipeSelected emits a new event and sends it to recipe.component-->
-    <app-recipe-item *ngFor="let curRecipe of recipes" [recipe] = curRecipe (recipeSelected)="onRecipeSelected(curRecipe)"></app-recipe-item>
+    <app-recipe-item
+      *ngFor="let curRecipe of recipes"
+      [recipe]=curRecipe
+    ></app-recipe-item>
   </div>
 </div>
 
